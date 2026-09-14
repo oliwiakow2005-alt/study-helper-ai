@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Helper AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
 
+<main class="container">
+    <nav>
+        {% if session.get("nazwa_uzytkownika") %}
+            <a href="/">Start</a>
+            <a href="/zapytaj">Zapytaj AI</a>
+            <a href="/streszcz">Streszcz tekst</a>
+            <a href="/quiz">Wygeneruj quiz</a>
+            <a href="/analizuj">Analizuj CSV</a>
+            <a href="/polityka-prywatnosci">Polityka prywatności</a>
+            <a href="/wyloguj">Wyloguj</a>
+        {% else %}
+            <a href="/logowanie">Logowanie</a>
+            <a href="/rejestracja">Rejestracja</a>
+            <a href="/polityka-prywatnosci">Polityka prywatności</a>
+        {% endif %}
+    </nav>
+
+    {% if session.get("nazwa_uzytkownika") %}
+        <p class="muted">Zalogowano jako: <strong>{{ session.get("nazwa_uzytkownika") }}</strong></p>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>
