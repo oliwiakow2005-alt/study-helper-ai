@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Rejestracja</h1>
+
+<p class="intro">Utwórz konto, aby korzystać z aplikacji.</p>
+
+<form action="/rejestracja" method="POST">
+    <label>Nazwa użytkownika:</label>
+    <input type="text" name="nazwa_uzytkownika" placeholder="np. oliwia" required>
+
+    <label>Hasło:</label>
+    <input type="password" name="haslo" placeholder="minimum 8 znaków" required>
+
+    <button type="submit">Zarejestruj się</button>
+</form>
+
+<p class="small-info">
+    Rejestrując się, akceptujesz, że treść Twoich zapytań i przesyłanych plików
+    może być przetwarzana przez zewnętrzny model AI w celu wygenerowania odpowiedzi.
+</p>
+
+{% if blad %}
+<div class="answer-box error">
+    <p>{{ blad }}</p>
+</div>
+{% endif %}
+
+{% if sukces %}
+<div class="answer-box success">
+    <p>{{ sukces }}</p>
+    <p><a href="/logowanie">Przejdź do logowania</a></p>
+</div>
+{% endif %}
+
+<p>Masz już konto? <a href="/logowanie">Zaloguj się</a></p>
+{% endblock %}
