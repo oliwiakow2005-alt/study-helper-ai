@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Logowanie</h1>
+
+<p class="intro">Zaloguj się, aby korzystać z funkcji AI.</p>
+
+<form action="/logowanie" method="POST">
+    <label>Nazwa użytkownika:</label>
+    <input type="text" name="nazwa_uzytkownika" placeholder="Nazwa użytkownika" required>
+
+    <label>Hasło:</label>
+    <input type="password" name="haslo" placeholder="Hasło" required>
+
+    <button type="submit">Zaloguj się</button>
+</form>
+
+{% if blad %}
+<div class="answer-box error">
+    <p>{{ blad }}</p>
+</div>
+{% endif %}
+
+<p>Nie masz konta? <a href="/rejestracja">Zarejestruj się</a></p>
+{% endblock %}

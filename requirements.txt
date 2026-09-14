@@ -1,0 +1,10 @@
+flask
+flask-bcrypt
+flask-limiter
+flask-talisman
+google-genai
+pandas
+markdown
+matplotlib
+python-dotenv
+gunicorn

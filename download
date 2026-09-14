@@ -1,0 +1,6 @@
+.env
+.env.*
+users.json
+__pycache__/
+*.pyc
+static/reports/

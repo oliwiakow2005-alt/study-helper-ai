@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Wygeneruj quiz</h1>
+
+<p class="intro">Wklej notatki, a AI przygotuje quiz A/B/C/D.</p>
+
+<form action="/quiz" method="POST">
+    <label>Notatki:</label>
+    <textarea name="tekst" rows="10" maxlength="5000" placeholder="Wklej notatki...">{% if tekst %}{{ tekst }}{% endif %}</textarea>
+    <button type="submit">Wygeneruj quiz</button>
+</form>
+
+{% if blad %}
+<div class="answer-box error">
+    <p>{{ blad }}</p>
+</div>
+{% endif %}
+
+{% if wynik %}
+<div class="answer-box">
+    <h2>Quiz</h2>
+    <p>{{ wynik }}</p>
+</div>
+{% endif %}
+{% endblock %}
