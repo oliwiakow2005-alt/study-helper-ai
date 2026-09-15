@@ -20,7 +20,14 @@
 {% if wynik %}
 <div class="answer-box">
     <h2>Quiz</h2>
-    <p>{{ wynik }}</p>
+
+    <div id="quiz-wynik"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        const markdownText = {{ wynik|tojson }};
+        document.getElementById("quiz-wynik").innerHTML = marked.parse(markdownText);
+    </script>
 </div>
 {% endif %}
 {% endblock %}
