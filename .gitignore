@@ -1,0 +1,8 @@
+.env
+.env.*
+users.json
+__pycache__/
+*.pyc
+static/reports/
+raport_*.html
+*.zip
