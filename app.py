@@ -125,11 +125,12 @@ Talisman(
     app,
     force_https=False,
     frame_options=None if IN_COLAB else "SAMEORIGIN",
-    content_security_policy={
-        "default-src": "'self'",
-        "style-src": ["'self'", "'unsafe-inline'"],
-        "img-src": ["'self'", "data:"],
-        "script-src": ["'self'"]
+content_security_policy={
+    "default-src": "'self'",
+    "style-src": ["'self'", "'unsafe-inline'"],
+    "img-src": ["'self'", "data:"],
+    "script-src": ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"]
+}
     }
 )
 
