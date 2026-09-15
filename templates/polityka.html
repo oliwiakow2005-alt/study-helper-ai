@@ -1,26 +1,154 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Polityka prywatności</h1>
 
-<div class="answer-box">
+<section class="privacy-hero">
+    <p class="badge">🔒 Prywatność i bezpieczeństwo</p>
+    <h1>Polityka prywatności Study Helper AI ✨</h1>
+    <p class="intro">
+        Ta strona wyjaśnia, jakie dane mogą być przetwarzane w aplikacji Study Helper AI
+        i jak dbamy o ich bezpieczeństwo. Bez prawniczego bełkotu, obiecuję 😎
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>📌 1. Kto jest właścicielem aplikacji?</h2>
     <p>
-        Aplikacja Study Helper AI zbiera minimalną ilość danych potrzebnych do działania:
-        nazwę użytkownika, zahashowane hasło oraz treści przesyłane przez formularze.
+        Aplikacja <strong>Study Helper AI</strong> została przygotowana jako projekt edukacyjny.
+        Jej celem jest pomoc w nauce, streszczaniu tekstów, generowaniu quizów i analizie plików CSV.
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>🧠 2. Jakie dane wpisuje użytkownik?</h2>
+    <p>Aplikacja może przetwarzać dane, które użytkownik sam wpisze lub prześle, np.:</p>
+
+    <ul>
+        <li>pytania zadane w zakładce <strong>Zapytaj AI</strong>,</li>
+        <li>teksty wklejone do streszczenia,</li>
+        <li>notatki użyte do wygenerowania quizu,</li>
+        <li>pliki CSV przesłane do analizy,</li>
+        <li>nazwę użytkownika potrzebną do logowania.</li>
+    </ul>
+
+    <p>
+        Aplikacja nie prosi o dane wrażliwe, takie jak PESEL, adres zamieszkania,
+        numer telefonu czy dane płatnicze. Lepiej ich tutaj nie wpisywać 🚫
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>🔐 3. Logowanie i hasła</h2>
+    <p>
+        Hasła użytkowników nie są zapisywane jako zwykły tekst.
+        Aplikacja zapisuje wyłącznie <strong>hash hasła</strong>, czyli jego bezpieczną,
+        przetworzoną wersję.
     </p>
 
     <p>
-        Hasła nie są przechowywane wprost. Są zapisywane jako hash bcrypt.
+        Dzięki temu nawet jeśli ktoś zajrzy do pliku użytkowników, nie zobaczy prawdziwych haseł.
+        Hasła są traktowane jak sekret — zero ploteczek 🤫
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>📁 4. Pliki CSV i raporty</h2>
+    <p>
+        Użytkownik może przesłać plik CSV do analizy. Aplikacja wykorzystuje dane z pliku,
+        żeby przygotować podsumowanie, obserwacje i prosty raport.
     </p>
 
     <p>
-        Treści pytań, tekstów i plików CSV mogą być wysyłane do zewnętrznego modelu AI
-        w celu wygenerowania odpowiedzi.
+        Wygenerowane raporty HTML są plikami technicznymi aplikacji i nie powinny być
+        wrzucane do publicznego repozytorium GitHub. Dlatego zostały dodane do
+        <strong>.gitignore</strong>.
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>🤖 5. Korzystanie z AI</h2>
+    <p>
+        Pytania, teksty i dane przesłane przez użytkownika mogą być przekazywane do modelu AI,
+        aby wygenerować odpowiedź, streszczenie, quiz lub analizę danych.
     </p>
 
     <p>
-        Projekt jest demonstracyjny i edukacyjny. Nie należy przesyłać danych wrażliwych,
-        numerów PESEL, haseł, danych medycznych ani poufnych dokumentów.
+        Nie należy wpisywać do aplikacji haseł, kluczy API, prywatnych wiadomości,
+        danych medycznych ani innych poufnych informacji. AI jest pomocne, ale nie musi
+        wiedzieć wszystkiego, bez przesady 💅
     </p>
-</div>
+</section>
+
+<section class="answer-box">
+    <h2>🛡️ 6. Zabezpieczenia aplikacji</h2>
+    <p>W aplikacji zastosowano kilka podstawowych zabezpieczeń:</p>
+
+    <ul>
+        <li>logowanie użytkownika,</li>
+        <li>hashowanie haseł,</li>
+        <li>limity zapytań, żeby ograniczyć nadużycia,</li>
+        <li>ochronę przed prostymi próbami prompt injection,</li>
+        <li>nagłówki bezpieczeństwa,</li>
+        <li>walidację długości tekstu i rodzaju przesyłanego pliku.</li>
+    </ul>
+
+    <p>
+        Czyli aplikacja nie jest totalnym dzikim zachodem 🤠
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>🧹 7. Minimalizacja danych</h2>
+    <p>
+        Aplikacja zbiera tylko te dane, które są potrzebne do działania konkretnych funkcji.
+        Nie ma tu newslettera, reklam, śledzenia użytkownika ani zbierania danych „bo tak”.
+    </p>
+
+    <p>
+        Mniej danych = mniej problemów. Proste i piękne ✨
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>👀 8. Czego użytkownik powinien unikać?</h2>
+    <p>Nie wpisuj do aplikacji:</p>
+
+    <ul>
+        <li>prawdziwych haseł,</li>
+        <li>kluczy API,</li>
+        <li>danych osobowych innych osób,</li>
+        <li>danych medycznych, finansowych lub bardzo prywatnych,</li>
+        <li>treści, których nie chcesz przekazywać do modelu AI.</li>
+    </ul>
+
+    <p>
+        Krótko mówiąc: nie karmimy appki sekretami 🫡
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>📬 9. Kontakt</h2>
+    <p>
+        W razie pytań dotyczących działania aplikacji lub przetwarzania danych
+        można skontaktować się z autorką projektu.
+    </p>
+
+    <p>
+        Projekt ma charakter edukacyjny i został przygotowany w ramach kursu.
+    </p>
+</section>
+
+<section class="answer-box">
+    <h2>✅ 10. Podsumowanie</h2>
+    <p>
+        Study Helper AI pomaga w nauce, ale użytkownik powinien korzystać z niej rozsądnie.
+        Aplikacja stara się ograniczać ilość danych, chronić hasła i informować jasno,
+        co dzieje się z wpisywanymi treściami.
+    </p>
+
+    <p>
+        Prywatność jest ważna. Nawet jeśli czasem dodamy emotkę 😌✨
+    </p>
+</section>
+
 {% endblock %}
