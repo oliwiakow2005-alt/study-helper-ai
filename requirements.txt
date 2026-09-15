@@ -5,6 +5,7 @@ flask-talisman
 google-genai
 pandas
 markdown
+markupsafe
 matplotlib
 python-dotenv
 gunicorn
