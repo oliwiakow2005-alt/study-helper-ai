@@ -4,32 +4,37 @@
 <h1>Zapytaj AI</h1>
 
 <p class="intro">
-    Zadaj pytanie AI. Ta funkcja działa tylko po zalogowaniu.
+    Zadaj pytanie, a Study Helper AI odpowie krótko i konkretnie.
 </p>
 
 <form action="/zapytaj" method="POST">
-    <label>Twoje pytanie:</label>
-
-    <textarea
-        name="pytanie"
-        rows="6"
-        maxlength="1000"
-        placeholder="Wpisz pytanie..."
-    ></textarea>
+    <label for="pytanie">Twoje pytanie:</label>
+    <textarea 
+        id="pytanie"
+        name="pytanie" 
+        rows="6" 
+        maxlength="1000" 
+        placeholder="Np. Jak przygotować się do egzaminu?"
+    >{% if pytanie %}{{ pytanie }}{% endif %}</textarea>
 
     <button type="submit">Wyślij</button>
 </form>
 
 {% if pytanie %}
-<p class="muted">
-    <strong>Twoje pytanie:</strong> {{ pytanie }}
-</p>
+<p><strong>Twoje pytanie:</strong> {{ pytanie }}</p>
 {% endif %}
 
 {% if odpowiedz %}
 <div class="answer-box">
     <h2>Odpowiedź</h2>
-    <p>{{ odpowiedz }}</p>
+
+    <div id="odpowiedz-ai"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        const markdownText = {{ odpowiedz|tojson }};
+        document.getElementById("odpowiedz-ai").innerHTML = marked.parse(markdownText);
+    </script>
 </div>
 {% endif %}
 {% endblock %}
